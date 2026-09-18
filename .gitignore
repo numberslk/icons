@@ -1,0 +1,15 @@
+node_modules/
+gazettes/extracted_temp/
+gazettes/2020_pages/
+gazettes/*.png
+gazettes/**/*.png
+test_icons/
+.DS_Store
+Thumbs.db
+*.log
+__pycache__/
+*.pyc
+*.pyo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -1,0 +1,83 @@
+{
+  "name": "@numberslk/icons",
+  "version": "1.0.0",
+  "description": "The official open-source icon suite by numbers.lk — featuring 180+ official Sri Lanka election symbols, with upcoming collections for Sri Lankan banks and public institutions.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "BSD-3-Clause",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./election-symbols": {
+      "import": "./dist/election-symbols/index.mjs",
+      "require": "./dist/election-symbols/index.js",
+      "types": "./dist/election-symbols/index.d.ts"
+    },
+    "./election-symbols/svg/*": "./dist/svg/*",
+    "./election-symbols/png/*": "./dist/png/*",
+    "./election-symbols/png-1024/*": "./dist/png-1024/*",
+    "./election-symbols/metadata": "./src/metadata.json",
+    "./svg": "./dist/svg",
+    "./svg/*": "./dist/svg/*",
+    "./png/*": "./dist/png/*",
+    "./png-1024/*": "./dist/png-1024/*",
+    "./metadata": "./src/metadata.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src/metadata.json",
+    "src/icons",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "extract": "python scripts/extract_symbols.py && python scripts/isolate_extras_final.py",
+    "vectorize": "python scripts/vectorize_highres_smooth.py",
+    "metadata": "python scripts/build_metadata.py",
+    "build": "node scripts/build_package.js && node scripts/build_showcase_data.js && python scripts/update_readme_with_all_icons.py",
+    "test": "node test/test_import.js",
+    "audit": "python scripts/audit_all_svgs.py",
+    "start": "node scripts/serve.js",
+    "dev": "node scripts/serve.js",
+    "serve": "node scripts/serve.js",
+    "configure-map": "node scripts/save_election_map.js",
+    "rebuild-all": "npm run extract && npm run vectorize && npm run metadata && npm run build && npm test"
+  },
+  "keywords": [
+    "icons",
+    "heroicons",
+    "lucide",
+    "sri-lanka",
+    "election",
+    "election-symbols",
+    "symbols",
+    "gazette",
+    "election-commission",
+    "react-icons",
+    "svg-icons",
+    "sinhala",
+    "tamil",
+    "chanda-lakuna"
+  ],
+  "author": "numbers.lk",
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/numberslk/lk-election-symbols.git"
+  }
+}

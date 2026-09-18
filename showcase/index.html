@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@numberslk/icons — Sri Lanka Election Symbols & Civic Insignia</title>
+  <meta name="description" content="Official Sri Lanka civic vector icon library by numbers.lk. Featuring 182 precision-vectorized election symbols from Government Gazettes with subpath import support.">
+  
+  <!-- Unified Typography: Single clean font (Geist) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Theme-Sensitive Prism Highlighting defined in style.css -->
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem("es-theme") || localStorage.getItem("citadel-theme");
+        if (theme === "dark" || (!theme && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.setAttribute("data-theme", "light");
+          document.documentElement.classList.remove("dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="custom-scrollbar">
+
+  <!-- Top Site Header (Citadel editorial style) -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="header-left">
+        <!-- Mobile Sidebar Toggle -->
+        <button id="mobileMenuBtn" class="btn-icon mobile-menu-btn" aria-label="Toggle navigation menu" title="Toggle menu">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.75">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- Brand Lockup: NumbersLogo (Citadel style) -->
+        <a href="#" class="brand-lockup" id="brandHomeLink" title="numbers.lk — Sri Lanka Election Symbols">
+          <svg class="citadel-logo" viewBox="0 0 500 500" width="30" height="30" fill="currentColor">
+            <path fill-rule="evenodd" d="M228.4 181.2c59.6 0 107.8 48.3 107.8 107.8 0 59.6-48.3 107.8-107.8 107.8-59.6 0-107.8-48.3-107.8-107.8 0-59.5 48.2-107.8 107.8-107.8M228.4 78C111.9 78 17.4 172.5 17.4 289c0 116.5 94.5 211 211 211 116.5 0 211-94.5 211-211 0-25.2-4.4-49.5-12.6-71.9-5.2-14.4-16.9-24.2-32-26.9-45.1-7.9-82-39.7-97.1-81.9-5.2-14.5-16.8-24.3-31.9-27C253.7 79.2 241.2 78 228.4 78z"/>
+            <path fill-rule="evenodd" d="M416.8 0c36.3 0 65.8 29.5 65.8 65.8 0 36.3-29.5 65.8-65.8 65.8-36.3 0-65.8-29.5-65.8-65.8 0-36.3 29.5-65.8 65.8-65.8z"/>
+          </svg>
+          <div class="brand-text">
+            <div class="brand-title-row">
+              <span class="brand-title">Numbers.lk</span>
+              <span class="u-badge primary soft">Icons</span>
+            </div>
+            <span class="brand-sub">Sri Lanka Election Symbols</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- NPM Install Pill -->
+        <button id="copyNpmBtn" class="npm-cmd-pill" title="Click to copy npm install command">
+          <code>npm i @numberslk/icons</code>
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+            <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+          </svg>
+        </button>
+
+        <!-- GitHub Star Button in Top Bar (Compact & Sleek) -->
+        <a href="https://github.com/numberslk/lk-election-symbols" target="_blank" rel="noopener" class="header-gh-star-btn" title="Star @numberslk/icons on GitHub">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>
+          <span class="gh-star-label">GitHub</span>
+          <span class="gh-star-pill">
+            <svg viewBox="0 0 24 24" width="11" height="11" fill="#eab308" stroke="#ca8a04" stroke-width="1.5">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            <span class="gh-star-count">Star</span>
+          </span>
+        </a>
+
+        <!-- Theme Toggle (Light / Dark) -->
+        <button id="themeToggleBtn" class="btn-icon" title="Toggle Light / Dark mode" aria-label="Toggle theme">
+          <svg id="themeSunIcon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.75" style="display: none;">
+            <circle cx="12" cy="12" r="4"></circle>
+            <line x1="12" y1="2" x2="12" y2="4"></line>
+            <line x1="12" y1="20" x2="12" y2="22"></line>
+            <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line>
+            <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line>
+            <line x1="2" y1="12" x2="4" y2="12"></line>
+            <line x1="20" y1="12" x2="22" y2="12"></line>
+            <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line>
+            <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line>
+          </svg>
+          <svg id="themeMoonIcon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.75">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- App Layout: Vertical Sidebar + Main Content (Citadel Layout) -->
+  <div class="app-layout">
+    
+    <!-- Mobile Backdrop -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- Vertical Sidebar Navigation (Citadel & shadcn sidebar pattern) -->
+    <aside class="app-sidebar" id="appSidebar">
+      <div class="sidebar-inner">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Navigation</div>
+          <nav class="sidebar-menu" role="tablist">
+            <button class="sidebar-nav-item active" data-view="election-symbols" id="navItemElection">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="m9 12 2 2 4-4"></path></svg>
+              <span class="sidebar-nav-text">Symbols</span>
+              <span class="sidebar-count" id="sidebarCountAll">182</span>
+            </button>
+            <button class="sidebar-nav-item" data-view="docs" id="navItemDocs">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.75"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              <span class="sidebar-nav-text">Docs</span>
+            </button>
+            <button class="sidebar-nav-item" data-view="config" id="navItemConfig">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.75"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+              <span class="sidebar-nav-text">Election Map</span>
+              <span class="sidebar-count" id="sidebarCountConfig">92</span>
+            </button>
+          </nav>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Collections</div>
+          <nav class="sidebar-menu">
+            <button class="sidebar-nav-item" data-view="banks" id="navItemBanks">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.75"><line x1="3" y1="21" x2="21" y2="21"></line><line x1="3" y1="10" x2="21" y2="10"></line><polyline points="3 10 12 4 21 10"></polyline><line x1="6" y1="10" x2="6" y2="21"></line><line x1="10" y1="10" x2="10" y2="21"></line><line x1="14" y1="10" x2="14" y2="21"></line><line x1="18" y1="10" x2="18" y2="21"></line></svg>
+              <span class="sidebar-nav-text">Banks</span>
+              <span class="sidebar-soon">Soon</span>
+            </button>
+            <button class="sidebar-nav-item" data-view="gov" id="navItemGov">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="4" y="2" width="16" height="20" rx="2"></rect><path d="M9 22v-4h6v4"></path><line x1="8" y1="6" x2="8.01" y2="6"></line><line x1="16" y1="6" x2="16.01" y2="6"></line><line x1="12" y1="6" x2="12.01" y2="6"></line></svg>
+              <span class="sidebar-nav-text">Gov</span>
+              <span class="sidebar-soon">Soon</span>
+            </button>
+            <button class="sidebar-nav-item" data-view="brands" id="navItemBrands">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.83 0l6.59-6.59a2 2 0 0 0 0-2.83L12 2Z"></path><circle cx="7" cy="7" r="1.5"></circle></svg>
+              <span class="sidebar-nav-text">Brands</span>
+              <span class="sidebar-soon">Soon</span>
+            </button>
+          </nav>
+        </div>
+
+        <div class="sidebar-footer-note">
+          <span class="u-badge gray subtle">Gazette No. 2315/06</span>
+          <span class="sidebar-footer-caption">Master 512px cubic spline civic insignia</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="app-content-area custom-scrollbar">
+
+      <!-- ==================================================================
+           VIEW 1: Election Symbols (Primary Active View)
+           ================================================================== -->
+      <div id="viewElectionSymbols" class="app-view active">
+        
+        <!-- Page Title Header (Citadel Editorial Style) -->
+        <div class="page-header">
+          <div class="page-header-pre">
+            <span class="u-badge gray subtle">Gazettes No. 2315/06 &amp; 2263/24</span>
+            <span class="page-header-sep">•</span>
+            <span class="page-header-meta-text">Election Commission of Sri Lanka</span>
+          </div>
+          <h1 class="page-title">Sri Lanka Election Symbols</h1>
+          <p class="page-subtitle">182 official political party and candidate symbols extracted from Government Gazettes, handcrafted on a 512×512 master cubic spline grid with calibrated circular insignia clearance.</p>
+        </div>
+
+        <!-- Controls / Search & Filters Bar -->
+        <section class="controls-bar">
+          <!-- Search Input -->
+          <div class="search-box">
+            <svg class="search-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.75">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input 
+              type="text" 
+              id="searchInput" 
+              class="input search-input"
+              placeholder="Search 182 symbols (e.g. Elephant, Telephone, මාලිමාව, පොහොට්ටුව, NPP, UNP, ITAK)..."
+              autocomplete="off"
+              spellcheck="false"
+            >
+            <kbd class="search-kbd">/</kbd>
+            <button id="clearSearchBtn" class="clear-search-btn" aria-label="Clear search" style="display: none;">&times;</button>
+          </div>
+
+          <!-- Filters Row -->
+          <div class="filters-row">
+            <!-- Segmented Filter Tabs (shadcn tabs style) -->
+            <div class="segmented-tabs" role="tablist">
+              <button class="seg-tab active" data-filter="all" role="tab">
+                All <span class="seg-count" id="countAll">182</span>
+              </button>
+              <button class="seg-tab" data-filter="schedule-a" role="tab">
+                Parties (A) <span class="seg-count" id="countA">78</span>
+              </button>
+              <button class="seg-tab" data-filter="schedule-b" role="tab">
+                Independent (B) <span class="seg-count" id="countB">104</span>
+              </button>
+              <button class="seg-tab" data-filter="popular" role="tab">
+                Prominent <span class="seg-count" id="countPop">18</span>
+              </button>
+            </div>
+
+            <!-- Toolbar Options -->
+            <div class="toolbar-options">
+              <!-- Size Slider (Standard Sizes: 24, 32, 48, 64, 128, 256, 512) -->
+              <div class="size-slider-group">
+                <span class="toolbar-label">Size:</span>
+                <input type="range" id="sizeSlider" class="size-slider" min="0" max="6" value="4" step="1" title="Standard Icon Sizes: 24px, 32px, 48px, 64px, 128px, 256px, 512px">
+                <span id="sizeValue" class="size-display">128px</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Icons Grid (Strict Square Clean Stage) -->
+        <div class="icons-grid" id="iconsGrid">
+          <!-- Injected via app.js -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="card empty-state" id="emptyState" style="display: none;">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.75" class="empty-icon">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <h3 class="empty-title">No symbols found</h3>
+          <p class="empty-desc">Try searching by English, Sinhala, Tamil, or political party acronym (e.g. UNP, SJB, NPP, ITAK).</p>
+          <button class="btn btn-default" id="resetSearchBtn">Reset Search Filter</button>
+        </div>
+
+        <!-- Bottom Banner Linking to Documentation Tab -->
+        <div class="card docs-banner-card">
+          <div class="docs-banner-content">
+            <h3 class="docs-banner-title">Need Developer Integration Code?</h3>
+            <p class="docs-banner-desc">Ready-to-use snippets for React, Next.js, Vue 3, vanilla JavaScript, and CDN delivery are in the Developer Integration tab.</p>
+          </div>
+          <button class="btn btn-default open-docs-view-btn">
+            <span>View Developer Guide &rarr;</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- ==================================================================
+           VIEW 2: Developer Integration (Separate Tab in Side Nav)
+           ================================================================== -->
+      <div id="viewDocs" class="app-view" style="display: none;">
+        <section class="docs-view-hero">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span>Developer Reference • @numberslk/icons</span>
+          </div>
+          <h1 class="page-title">Developer Integration</h1>
+          <p class="page-description">
+            Complete guide for integrating official Sri Lanka election symbols into your web applications. Supports React/Next.js tree-shaking, Vue 3, vanilla TypeScript/ESM, and on-demand CDN loading.
+          </p>
+        </section>
+
+        <div class="docs-grid">
+          <!-- Package Installation -->
+          <div class="card doc-card" id="docsInstall">
+            <h3 class="doc-card-title">1. Package Installation</h3>
+            <p class="doc-card-desc">Install the official icon suite via npm, pnpm, yarn, or bun, or load icons on-demand via CDN.</p>
+            <div class="doc-code-wrapper">
+              <div class="doc-code-toolbar">
+                <span class="code-lang-badge">Terminal</span>
+                <button class="code-copy-inline-btn copy-doc-code-btn" data-target="codeInstall">
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span>Copy</span>
+                </button>
+              </div>
+              <pre class="doc-code-block"><code id="codeInstall" class="language-bash"># npm
+npm install @numberslk/icons
+
+# pnpm
+pnpm add @numberslk/icons
+
+# yarn & bun
+yarn add @numberslk/icons
+bun add @numberslk/icons</code></pre>
+            </div>
+          </div>
+
+          <!-- React / Next.js -->
+          <div class="card doc-card" id="docsReact">
+            <h3 class="doc-card-title">2. React & Next.js</h3>
+            <p class="doc-card-desc">Tree-shakable components with TypeScript definitions, forwardRef, and Tailwind CSS support.</p>
+            <div class="doc-code-wrapper">
+              <div class="doc-code-toolbar">
+                <span class="code-lang-badge">React / JSX</span>
+                <button class="code-copy-inline-btn copy-doc-code-btn" data-target="codeReact">
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span>Copy</span>
+                </button>
+              </div>
+              <pre class="doc-code-block"><code id="codeReact" class="language-jsx">import { ElephantIcon, CompassIcon } from '@numberslk/icons/election-symbols';
+// Or root import: import { ElephantIcon } from '@numberslk/icons';
+
+export function ElectionHeader() {
+  return (
+    &lt;div className="flex gap-4 items-center"&gt;
+      &lt;ElephantIcon size={32} color="#dc2638" /&gt;
+      &lt;CompassIcon size={32} className="text-slate-800 dark:text-slate-100" /&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Vanilla JS / TypeScript -->
+          <div class="card doc-card" id="docsVanilla">
+            <h3 class="doc-card-title">3. Vanilla JS & TypeScript</h3>
+            <p class="doc-card-desc">Zero-dependency helper functions or direct SVG string imports for any web application.</p>
+            <div class="doc-code-wrapper">
+              <div class="doc-code-toolbar">
+                <span class="code-lang-badge">JavaScript</span>
+                <button class="code-copy-inline-btn copy-doc-code-btn" data-target="codeVanilla">
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span>Copy</span>
+                </button>
+              </div>
+              <pre class="doc-code-block"><code id="codeVanilla" class="language-javascript">import { getSymbolSvg, searchSymbols } from '@numberslk/icons/election-symbols';
+
+// Search by political party acronym or name
+const matches = searchSymbols('NPP');
+
+// Render 512px SVG string
+const svg = getSymbolSvg('compass', { size: 48, color: '#dc2638' });
+document.getElementById('iconStage').innerHTML = svg;</code></pre>
+            </div>
+          </div>
+
+          <!-- Election Context Syntax & Web Components -->
+          <div class="card doc-card" id="docsElectionSyntax">
+            <h3 class="doc-card-title">4. Election Context Syntax & Web Components</h3>
+            <p class="doc-card-desc">Access symbols dynamically by election year, election type, district, and party or candidate group (e.g. Compass via <code>&lt;lk-election-symbols-2025-pres-national-NPP&gt;</code>).</p>
+            <div class="doc-code-wrapper">
+              <div class="doc-code-toolbar">
+                <span class="code-lang-badge">HTML / Web Component</span>
+                <button class="code-copy-inline-btn copy-doc-code-btn" data-target="codeElectionSyntax">
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span>Copy</span>
+                </button>
+              </div>
+              <pre class="doc-code-block"><code id="codeElectionSyntax" class="language-html">&lt;!-- 1. Web Component (Direct Custom Element) --&gt;
+&lt;lk-election-symbols-2025-pres-national-NPP size="48"&gt;&lt;/lk-election-symbols-2025-pres-national-NPP&gt;
+&lt;lk-election-symbols-2024-pres-national-SJB size="48"&gt;&lt;/lk-election-symbols-2024-pres-national-SJB&gt;
+
+&lt;!-- 2. Generic Web Component --&gt;
+&lt;lk-election-symbol name="2025-pres-national-NPP" size="48"&gt;&lt;/lk-election-symbol&gt;
+
+&lt;!-- 3. JavaScript / TypeScript Resolver --&gt;
+&lt;script type="module"&gt;
+  import { resolveElectionSymbol, getSymbolSvg } from '@numberslk/icons/election-symbols';
+  const compass = resolveElectionSymbol('&lt;lk-election-symbols-2025-pres-national-NPP&gt;');
+  console.log(compass.name); // Compass
+&lt;/script&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Official Gazette Citations -->
+          <div class="card doc-card" id="docsGazettes">
+            <h3 class="doc-card-title">5. Official Legal Gazette Citations</h3>
+            <p class="doc-card-desc">All insignia in this library are officially gazetted civic symbols of Sri Lanka:</p>
+            <div class="doc-citation-box">
+• Gazette Extraordinary No. 2315/06 (16 Jan 2023)
+• Gazette Extraordinary No. 2263/24 (21 Jan 2022)
+• Parliamentary Elections Act, No. 1 of 1981: Sched (A) & (B)
+• Official Register of Recognized Political Parties (EC-SL)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================================
+           VIEW 3: Upcoming Collection Empty State (Clean & Concise)
+           ================================================================== -->
+      <div id="viewUpcoming" class="app-view" style="display: none;">
+        <div class="card upcoming-container">
+          <div class="upcoming-icon-stage" id="upcomingIcon">
+            <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.75">
+              <line x1="3" y1="21" x2="21" y2="21"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+              <polyline points="3 10 12 4 21 10"></polyline>
+            </svg>
+          </div>
+          <h2 class="upcoming-title" id="upcomingTitle">Banks & Financial Insignia</h2>
+          <p class="upcoming-desc" id="upcomingDesc">
+            Precision SVG icons of licensed commercial banks and financial institutions of Sri Lanka. Master 512px cubic spline plates are currently in active curation and optical keyline testing.
+          </p>
+          <div class="badge badge-secondary" id="upcomingBadge">Planned for Q1 2025</div>
+          <div class="upcoming-actions">
+            <button class="btn btn-default back-to-election-btn">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="m15 18-6-6 6-6"></path>
+              </svg>
+              <span>Back to Election Symbols (182)</span>
+            </button>
+            <a href="https://github.com/numberslk/lk-election-symbols/issues" target="_blank" rel="noopener" class="btn btn-outline">
+              <span>Suggest an Insignia on GitHub</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================================
+           VIEW 4: Election Map Configurator
+           ================================================================== -->
+      <div id="viewConfig" class="app-view" style="display: none;">
+        <section class="docs-view-hero">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span>Election Mapping Studio • Interactive Editor</span>
+          </div>
+          <h1 class="page-title">Election Map Configurator</h1>
+          <p class="page-description">
+            Configure, edit, and save contextual election mappings (<code class="inline-code">&lt;lk-election-symbols-[year]-[type]-[district]-[party]&gt;</code>). Edits are automatically saved in local browser storage, hot-reloaded into live search and Web Components, and can be exported as <code class="inline-code">elections.json</code>.
+          </p>
+        </section>
+
+        <!-- Metrics & Storage Status Bar -->
+        <div class="config-metrics-bar">
+          <div class="card metric-card">
+            <div class="metric-value" id="configMetricAliases">0</div>
+            <div class="metric-label">Context Aliases</div>
+          </div>
+          <div class="card metric-card">
+            <div class="metric-value" id="configMetricParties">0</div>
+            <div class="metric-label">Recognized Parties</div>
+          </div>
+          <div class="card metric-card">
+            <div class="metric-value" id="configMetricDistricts">23</div>
+            <div class="metric-label">Districts &amp; National</div>
+          </div>
+          <div class="card metric-card status-metric-card">
+            <div class="metric-status-row">
+              <span class="status-indicator-dot" id="configStatusDot"></span>
+              <span class="status-indicator-text" id="configStatusText">Official Gazette Defaults</span>
+            </div>
+            <div class="metric-label">Active Configuration Source</div>
+          </div>
+        </div>
+
+        <!-- Toolbar: Add, Save, Export, Reset -->
+        <div class="config-toolbar-card card">
+          <div class="config-toolbar-left">
+            <button class="btn btn-default" id="configAddBtn">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <span>Add New Mapping</span>
+            </button>
+            <button class="btn btn-brand" id="configSaveBtn" title="Save directly to src/elections.json file in the application">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+              <span>Save to Application File (src/elections.json)</span>
+            </button>
+          </div>
+          <div class="config-toolbar-right">
+            <button class="btn btn-outline" id="configDownloadBtn" title="Download formatted elections.json">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Download elections.json</span>
+            </button>
+            <button class="btn btn-outline" id="configCopyJsonBtn" title="Copy JSON configuration to clipboard">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy JSON</span>
+            </button>
+            <button class="btn btn-ghost" id="configResetBtn" title="Reset all edits back to official gazette defaults">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+              <span>Reset to Defaults</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="config-subtabs-nav">
+          <button class="config-tab-btn active" data-config-tab="aliases" id="tabBtnAliases">
+            <span>Election Context Mappings</span>
+            <span class="subtab-count-badge" id="tabBadgeAliasesCount">0</span>
+          </button>
+          <button class="config-tab-btn" data-config-tab="parties" id="tabBtnParties">
+            <span>Party Master Registry</span>
+            <span class="subtab-count-badge" id="tabBadgePartiesCount">0</span>
+          </button>
+          <button class="config-tab-btn" data-config-tab="json" id="tabBtnJson">
+            <span>Raw JSON Editor</span>
+          </button>
+        </div>
+
+        <!-- Subtab 1: Context Mappings Table -->
+        <div class="config-subtab-pane active" id="paneAliases">
+          <!-- Filter Controls -->
+          <div class="config-filters-row card">
+            <div class="search-box config-search-box">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.75" class="search-icon">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="configSearchInput" class="search-input" placeholder="Search by tag, party, district, or symbol..." autocomplete="off">
+            </div>
+
+            <div class="config-select-group">
+              <select id="configFilterYear" class="config-filter-select">
+                <option value="all">All Years</option>
+              </select>
+              <select id="configFilterType" class="config-filter-select">
+                <option value="all">All Election Types</option>
+                <option value="pres">Presidential (pres)</option>
+                <option value="parl">Parliamentary (parl)</option>
+                <option value="prov">Provincial (prov)</option>
+                <option value="local">Local Authorities (local)</option>
+              </select>
+              <select id="configFilterDistrict" class="config-filter-select">
+                <option value="all">All Scopes / Districts</option>
+                <option value="national">National Scope</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Mappings Table -->
+          <div class="card config-table-card">
+            <div class="table-responsive">
+              <table class="config-table">
+                <thead>
+                  <tr>
+                    <th>Election Tag Syntax</th>
+                    <th>Year</th>
+                    <th>Type</th>
+                    <th>Scope / District</th>
+                    <th>Party / Group</th>
+                    <th>Assigned Symbol</th>
+                    <th style="text-align: right;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="configAliasesTableBody">
+                  <!-- Generated rows dynamically -->
+                </tbody>
+              </table>
+            </div>
+            <div class="config-table-footer" id="configTableFooter">
+              Showing 0 mappings
+            </div>
+          </div>
+        </div>
+
+        <!-- Subtab 2: Party Master Table -->
+        <div class="config-subtab-pane" id="paneParties" style="display: none;">
+          <div class="card config-table-card">
+            <div class="config-table-toolbar">
+              <div class="table-title">Party Master Insignia Allocations</div>
+            </div>
+            <div class="table-responsive">
+              <table class="config-table">
+                <thead>
+                  <tr>
+                    <th>Party Code / Acronym</th>
+                    <th>Default Official Symbol</th>
+                    <th>Symbol ID</th>
+                    <th style="text-align: right;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="configPartiesTableBody">
+                  <!-- Generated party rows dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subtab 3: Raw JSON Editor -->
+        <div class="config-subtab-pane" id="paneJson" style="display: none;">
+          <div class="card config-json-card">
+            <div class="config-json-toolbar">
+              <span class="code-lang-badge">elections.json</span>
+              <div class="config-json-actions">
+                <button class="btn btn-outline btn-sm" id="configFormatJsonBtn">Format JSON</button>
+                <button class="btn btn-brand btn-sm" id="configApplyJsonBtn">Apply &amp; Validate JSON</button>
+              </div>
+            </div>
+            <textarea id="configJsonTextarea" class="config-json-editor" spellcheck="false"></textarea>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Detail Modal Dialog (shadcn Dialog pattern) -->
+  <div class="modal-overlay" id="iconModal" style="display: none;">
+    <div class="modal-dialog card">
+      <button class="btn-icon modal-close-btn" id="modalCloseBtn" aria-label="Close dialog">&times;</button>
+      
+      <!-- Left: Stage & Scale Controls -->
+      <div class="modal-preview-col">
+        <!-- Live Size Indicator Badge -->
+        <div class="stage-dimension-badge" id="modalStageDimensionBadge" title="Current render dimensions">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="18" height="18" x="3" y="3" rx="2"/>
+            <path d="M9 3v18"/>
+            <path d="M15 3v18"/>
+          </svg>
+          <span id="modalStageDimensionText">128 × 128 px</span>
+        </div>
+
+        <div class="modal-icon-stage" id="modalSvgContainer">
+          <!-- SVG injected here -->
+        </div>
+
+        <!-- Scale Controls Header with Live Indicator -->
+        <div class="modal-scale-header">
+          <span class="scale-label">Preview Size:</span>
+          <span class="scale-current" id="modalCurrentScaleLabel">128px</span>
+        </div>
+
+        <div class="modal-size-pills">
+          <button class="btn-pill" data-preview-size="24">24px</button>
+          <button class="btn-pill" data-preview-size="32">32px</button>
+          <button class="btn-pill" data-preview-size="48">48px</button>
+          <button class="btn-pill" data-preview-size="64">64px</button>
+          <button class="btn-pill active" data-preview-size="128">128px</button>
+          <button class="btn-pill" data-preview-size="256">256px</button>
+          <button class="btn-pill" data-preview-size="512">512px</button>
+        </div>
+
+        <div class="modal-circle-badge" title="Official Gazette &amp; Ballot Circular Clearance">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="9"></circle>
+          </svg>
+          <span>Official Circular Frame</span>
+        </div>
+      </div>
+
+      <!-- Right: Details & Code -->
+      <div class="modal-details-col">
+        <div class="modal-header-meta">
+          <div class="modal-badges-row" id="modalBadges"></div>
+          <div class="modal-title-row">
+            <h3 class="modal-symbol-name" id="modalTitle">lk-election-elephant</h3>
+            <button class="btn btn-outline btn-sm copy-name-btn" id="modalCopyNameBtn" title="Copy icon name">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <div class="modal-locales-row">
+            <span class="locale-text" id="modalSinhala">අලියා</span>
+            <span class="locale-sep">•</span>
+            <span class="locale-text" id="modalTamil">யானை</span>
+          </div>
+        </div>
+
+        <div class="modal-parties-box" id="modalPartiesSection">
+          <span class="modal-section-label">Allocated Political Parties:</span>
+          <div class="parties-list" id="modalPartiesList"></div>
+        </div>
+
+        <!-- Special Election Context Syntax / Web Component Box -->
+        <div class="modal-election-box" id="modalElectionBox">
+          <div class="modal-election-header-row">
+            <span class="modal-section-label">Election Context Syntax / Web Component:</span>
+            <span class="badge badge-secondary election-badge" id="modalElectionBadge">Special Syntax</span>
+          </div>
+          <div class="modal-election-pill-row">
+            <code class="modal-election-code" id="modalElectionTagCode">&lt;lk-election-symbols-2025-pres-national-NPP&gt;</code>
+            <button class="code-copy-inline-btn" id="modalCopyElectionTagBtn" title="Copy special election syntax tag">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy Tag</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Code Snippet Box (shadcn code block) -->
+        <div class="code-container">
+          <div class="code-tabs-bar">
+            <div class="code-tabs-group">
+              <button class="code-tab-btn active" data-tab="react">React</button>
+              <button class="code-tab-btn" data-tab="election">Election Tag</button>
+              <button class="code-tab-btn" data-tab="svg">512px SVG</button>
+              <button class="code-tab-btn" data-tab="vue">Vue 3</button>
+              <button class="code-tab-btn" data-tab="html">HTML</button>
+            </div>
+            <button class="code-copy-inline-btn" id="modalSnippetCopyBtn" title="Copy snippet">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="code-box-pre"><code id="modalSnippetCode"></code></pre>
+        </div>
+
+        <!-- Modal Actions -->
+        <div class="modal-actions-row">
+          <button class="btn btn-default" id="modalCopyBtn">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>Copy Component</span>
+          </button>
+          <button class="btn btn-outline" id="modalCopySvgBtn">
+            <span>Copy SVG</span>
+          </button>
+          <button class="btn btn-outline" id="modalDownloadSvgBtn">
+            <span>Download .SVG (512px)</span>
+          </button>
+          <button class="btn btn-outline" id="modalDownloadPngBtn">
+            <span>Download .PNG (512px)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add/Edit Election Mapping Modal Dialog -->
+  <div class="modal-overlay" id="configModal" style="display: none;">
+    <div class="modal-dialog card config-modal-dialog">
+      <button class="btn-icon modal-close-btn" id="configModalCloseBtn" aria-label="Close dialog">&times;</button>
+      
+      <div class="config-modal-header">
+        <h3 class="modal-title" id="configModalTitle">Add Election Mapping</h3>
+        <p class="modal-subtitle">Configure an election context tag and bind it to an official symbol.</p>
+      </div>
+
+      <div class="config-modal-body">
+        <input type="hidden" id="configFormOriginalKey" value="" />
+        <div class="config-form-grid">
+          <!-- Row 1: Year & Type -->
+          <div class="form-field">
+            <label class="form-label" for="formYear">Election Year <span class="req">*</span></label>
+            <input type="number" id="formYear" class="form-input" placeholder="e.g. 2025" min="1947" max="2050" value="2025" />
+            <div class="form-pills-row">
+              <button type="button" class="btn-quick-pill" data-fill-year="2025">2025</button>
+              <button type="button" class="btn-quick-pill" data-fill-year="2024">2024</button>
+              <button type="button" class="btn-quick-pill" data-fill-year="2020">2020</button>
+              <button type="button" class="btn-quick-pill" data-fill-year="2019">2019</button>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="formType">Election Type <span class="req">*</span></label>
+            <select id="formType" class="form-input">
+              <option value="pres">Presidential (pres)</option>
+              <option value="parl">Parliamentary (parl)</option>
+              <option value="prov">Provincial Council (prov)</option>
+              <option value="local">Local Authorities (local)</option>
+            </select>
+          </div>
+
+          <!-- Row 2: District & Party/Group -->
+          <div class="form-field">
+            <label class="form-label" for="formDistrict">Scope / Electoral District <span class="req">*</span></label>
+            <select id="formDistrict" class="form-input">
+              <option value="national">National Scope (national)</option>
+              <option value="colombo">Colombo</option>
+              <option value="gampaha">Gampaha</option>
+              <option value="kalutara">Kalutara</option>
+              <option value="kandy">Kandy</option>
+              <option value="matale">Matale</option>
+              <option value="nuwara-eliya">Nuwara Eliya</option>
+              <option value="galle">Galle</option>
+              <option value="matara">Matara</option>
+              <option value="hambantota">Hambantota</option>
+              <option value="jaffna">Jaffna</option>
+              <option value="vanni">Vanni</option>
+              <option value="batticaloa">Batticaloa</option>
+              <option value="digamadulla">Digamadulla / Ampara</option>
+              <option value="trincomalee">Trincomalee</option>
+              <option value="kurunegala">Kurunegala</option>
+              <option value="puttalam">Puttalam</option>
+              <option value="anuradhapura">Anuradhapura</option>
+              <option value="polonnaruwa">Polonnaruwa</option>
+              <option value="badulla">Badulla</option>
+              <option value="monaragala">Monaragala</option>
+              <option value="ratnapura">Ratnapura</option>
+              <option value="kegalle">Kegalle</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="formParty">Party Acronym / Candidate Group <span class="req">*</span></label>
+            <input type="text" id="formParty" class="form-input" placeholder="e.g. NPP, SJB, SLPP, IND16..." value="NPP" />
+            <div class="form-pills-row">
+              <button type="button" class="btn-quick-pill" data-fill-party="NPP">NPP</button>
+              <button type="button" class="btn-quick-pill" data-fill-party="SJB">SJB</button>
+              <button type="button" class="btn-quick-pill" data-fill-party="SLPP">SLPP</button>
+              <button type="button" class="btn-quick-pill" data-fill-party="UNP">UNP</button>
+              <button type="button" class="btn-quick-pill" data-fill-party="ITAK">ITAK</button>
+              <button type="button" class="btn-quick-pill" data-fill-party="NDF">NDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Target Symbol Selection -->
+        <div class="form-field" style="margin-top: 1rem;">
+          <label class="form-label" for="formSymbolSelect">Assigned Symbol <span class="req">*</span></label>
+          <select id="formSymbolSelect" class="form-input">
+            <!-- Dynamically populated with 182 symbols -->
+          </select>
+        </div>
+
+        <!-- Live Reactive Tag & Symbol Preview -->
+        <div class="config-live-preview-card card">
+          <div class="live-preview-header">
+            <span class="live-preview-dot"></span>
+            <span>Live Generated Tag &amp; Symbol Binding</span>
+          </div>
+          <div class="live-preview-body">
+            <div class="live-preview-avatar-box circular-masked" id="formPreviewAvatar">
+              <!-- Live SVG injected -->
+            </div>
+            <div class="live-preview-info">
+              <code class="live-preview-tag" id="formPreviewTag">&lt;lk-election-symbols-2025-pres-national-NPP&gt;</code>
+              <div class="live-preview-details">
+                <span class="preview-symbol-title" id="formPreviewTitle">Compass</span>
+                <span class="preview-sep">•</span>
+                <span class="preview-symbol-sub" id="formPreviewSub">මාලිමාව • திசைகாட்டி</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="config-modal-footer">
+        <button type="button" class="btn btn-outline" id="configModalCancelBtn">Cancel</button>
+        <button type="button" class="btn btn-brand" id="configModalSaveBtn">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Save Mapping</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span>numbers<span class="brand-dot"></span>lk</span>
+        <span>•</span>
+        <span>Open Civic Data Initiative</span>
+      </div>
+      <div>
+        <span>Released under MIT &amp; BSD Licenses</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification (shadcn sonner/toast style) -->
+  <div class="toast-notice" id="toastNotification">
+    <span id="toastMessage">Copied to clipboard!</span>
+  </div>
+
+  <!-- Scripts -->
+  <!-- Prism.js Syntax Highlighting -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"></script>
+
+  <script src="symbols-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
