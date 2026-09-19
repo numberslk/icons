@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalElectionTagCode = document.getElementById('modalElectionTagCode');
   const modalCopyElectionTagBtn = document.getElementById('modalCopyElectionTagBtn');
 
-  // State: Standard Icon Sizes (32, 64, 128, 256, 512)
+  // State: Standard Icon Sizes (32, 64, 128, 256)
   const STANDARD_SIZES = [
     {
       size: 32,
@@ -73,30 +73,21 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       size: 128,
-      cardSize: '230px',
-      circleDim: '172px',
-      svgDim: '128px',
+      cardSize: '210px',
+      circleDim: '144px',
+      svgDim: '108px',
       slugFontSize: '0.75rem',
-      gap: '0.875rem',
-      cardPadding: '0.75rem 0.625rem 0.625rem 0.625rem',
+      gap: '0.75rem',
+      cardPadding: '0.625rem 0.5rem 0.5rem 0.5rem',
     },
     {
       size: 256,
-      cardSize: '370px',
-      circleDim: '300px',
-      svgDim: '256px',
+      cardSize: '280px',
+      circleDim: '200px',
+      svgDim: '152px',
       slugFontSize: '0.8125rem',
-      gap: '1rem',
-      cardPadding: '1rem 0.75rem 0.75rem 0.75rem',
-    },
-    {
-      size: 512,
-      cardSize: 'min(600px, 92vw)',
-      circleDim: 'min(530px, 80vw)',
-      svgDim: 'min(512px, 76vw)',
-      slugFontSize: '0.875rem',
-      gap: '1.25rem',
-      cardPadding: '1.25rem 1rem 1rem 1rem',
+      gap: '0.875rem',
+      cardPadding: '0.75rem 0.625rem 0.625rem 0.625rem',
     }
   ];
   const DEFAULT_SIZE = 64;
@@ -110,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
       else storedStandardSize = 256;
     }
   }
-  let currentStandardSize = [32, 64, 128, 256, 512].includes(storedStandardSize)
+  let currentStandardSize = [32, 64, 128, 256].includes(storedStandardSize)
     ? storedStandardSize
     : DEFAULT_SIZE;
   let currentFilter = 'all';
