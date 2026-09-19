@@ -4,8 +4,8 @@
 
 [![NPM Version](https://img.shields.io/npm/v/@numberslk/icons?color=amber&style=flat-square)](https://www.npmjs.com/package/@numberslk/icons)
 [![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue?style=flat-square)](LICENSE)
-[![Symbols Count](https://img.shields.io/badge/Election%20Symbols-182%20Ultra--Smooth%20Vectors-sky?style=flat-square)](https://github.com/numberslk/lk-election-symbols)
-[![High Resolution](https://img.shields.io/badge/Resolution-512px%20%26%201024px-violet?style=flat-square)](https://github.com/numberslk/lk-election-symbols)
+[![Symbols Count](https://img.shields.io/badge/Election%20Symbols-182%20Ultra--Smooth%20Vectors-sky?style=flat-square)](https://github.com/numberslk/icons)
+[![High Resolution](https://img.shields.io/badge/Resolution-512px%20%26%201024px-violet?style=flat-square)](https://github.com/numberslk/icons)
 [![Gazette Verified](https://img.shields.io/badge/Gazette-Election%20Commission%20LK-rose?style=flat-square)](https://elections.gov.lk)
 [![Interactive Showcase](https://img.shields.io/badge/Live%20Showcase-Local%20%3A3456-indigo?style=flat-square)](http://localhost:3456)
 

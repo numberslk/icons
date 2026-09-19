@@ -1,7 +1,7 @@
 {
   "partyMap": {
     "npp": "compass",
-    "jvp": "compass",
+    "jvp": "bell",
     "sjb": "telephone",
     "slpp": "flower-bud",
     "unp": "elephant",
@@ -88,7 +88,6 @@
   ],
   "aliases": {
     "2025-pres-national-npp": "compass",
-    "2024-pres-national-npp": "compass",
     "2024-pres-national-sjb": "telephone",
     "2024-pres-national-slpp": "flower-bud",
     "2024-pres-national-ind16": "gas-cylinder",
@@ -178,6 +177,7 @@
     "1994-pres-national-pa": "chair",
     "1994-pres-national-unp": "elephant",
     "1994-parl-national-pa": "chair",
-    "1994-parl-national-unp": "elephant"
+    "1994-parl-national-unp": "elephant",
+    "2024-pres-national-nmpp": "compass"
   }
 }
