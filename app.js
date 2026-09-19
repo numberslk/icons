@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterTabs = document.querySelectorAll('.seg-tab');
   const sizeSlider = document.getElementById('sizeSlider');
   const sizeValue = document.getElementById('sizeValue');
+  const sizeResetBtn = document.getElementById('sizeResetBtn');
+  const sizePillBtns = document.querySelectorAll('.size-pill-btn');
+  const focusDots = document.querySelectorAll('.focus-dot');
   const resultsCount = document.getElementById('resultsCount');
   const emptyState = document.getElementById('emptyState');
   const resetSearchBtn = document.getElementById('resetSearchBtn');
@@ -48,11 +51,70 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalElectionTagCode = document.getElementById('modalElectionTagCode');
   const modalCopyElectionTagBtn = document.getElementById('modalCopyElectionTagBtn');
 
-  // State (Standard icon sizes: 24, 32, 48, 64, 128, 256, 512)
-  const STANDARD_SIZES = [24, 32, 48, 64, 128, 256, 512];
+  // State: Standard Icon Sizes (32, 64, 128, 256, 512)
+  const STANDARD_SIZES = [
+    {
+      size: 32,
+      cardSize: '104px',
+      circleDim: '52px',
+      svgDim: '32px',
+      slugFontSize: '0.625rem',
+      gap: '0.5rem',
+      cardPadding: '0.35rem 0.25rem 0.35rem 0.25rem',
+    },
+    {
+      size: 64,
+      cardSize: '148px',
+      circleDim: '92px',
+      svgDim: '64px',
+      slugFontSize: '0.6875rem',
+      gap: '0.625rem',
+      cardPadding: '0.5rem 0.45rem 0.45rem 0.45rem',
+    },
+    {
+      size: 128,
+      cardSize: '230px',
+      circleDim: '172px',
+      svgDim: '128px',
+      slugFontSize: '0.75rem',
+      gap: '0.875rem',
+      cardPadding: '0.75rem 0.625rem 0.625rem 0.625rem',
+    },
+    {
+      size: 256,
+      cardSize: '370px',
+      circleDim: '300px',
+      svgDim: '256px',
+      slugFontSize: '0.8125rem',
+      gap: '1rem',
+      cardPadding: '1rem 0.75rem 0.75rem 0.75rem',
+    },
+    {
+      size: 512,
+      cardSize: 'min(600px, 92vw)',
+      circleDim: 'min(530px, 80vw)',
+      svgDim: 'min(512px, 76vw)',
+      slugFontSize: '0.875rem',
+      gap: '1.25rem',
+      cardPadding: '1.25rem 1rem 1rem 1rem',
+    }
+  ];
+  const DEFAULT_SIZE = 64;
+  let storedStandardSize = parseInt(localStorage.getItem('lk_icons_standard_size'), 10);
+  if (isNaN(storedStandardSize)) {
+    const oldCardSize = parseInt(localStorage.getItem('lk_icons_card_size'), 10);
+    if (!isNaN(oldCardSize)) {
+      if (oldCardSize <= 115) storedStandardSize = 32;
+      else if (oldCardSize <= 180) storedStandardSize = 64;
+      else if (oldCardSize <= 280) storedStandardSize = 128;
+      else storedStandardSize = 256;
+    }
+  }
+  let currentStandardSize = [32, 64, 128, 256, 512].includes(storedStandardSize)
+    ? storedStandardSize
+    : DEFAULT_SIZE;
   let currentFilter = 'all';
   let searchQuery = '';
-  let currentSize = 128;
   let activeModalSymbol = null;
   let activeSnippetTab = 'react';
   let modalPreviewSize = 128;
@@ -222,12 +284,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const iconSlug = `lk-election-${s.id}`;
 
-      // Scale SVG for card display inside circular insignia frame (tight, authentic clearance)
-      const stageSize = currentSize <= 48 ? Math.max(28, currentSize) : (currentSize <= 64 ? 54 : 70);
-      const customSvg = s.svg
-        .replace(/width="[^"]+"/, `width="${stageSize}"`)
-        .replace(/height="[^"]+"/, `height="${stageSize}"`)
-        .replace(/<svg/, `<svg style="width:${stageSize}px; height:${stageSize}px; max-width:88%; max-height:88%;"`);
+      // Dynamic SVG inside circular insignia frame (scales automatically via --card-size)
+      const cardSvg = s.svg.replace('<svg', '<svg class="card-symbol-svg"');
 
       card.innerHTML = `
         <div class="card-icon-box">
@@ -236,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>Copy</span>
           </button>
           <div class="symbol-circle-frame">
-            ${customSvg}
+            ${cardSvg}
           </div>
         </div>
         <div class="card-slug" title="${iconSlug}">${iconSlug}</div>
@@ -422,7 +480,6 @@ import { ${s.componentName} } from '@numberslk/icons/election-symbols';
       previewSizeBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       modalPreviewSize = parseInt(btn.dataset.previewSize, 10);
-      currentSize = modalPreviewSize;
       if (modalStageDimensionText) modalStageDimensionText.textContent = `${modalPreviewSize} × ${modalPreviewSize} px`;
       if (modalCurrentScaleLabel) modalCurrentScaleLabel.textContent = `${modalPreviewSize}px`;
       renderModalSvg();
@@ -1265,14 +1322,81 @@ import { ${s.componentName} } from '@numberslk/icons/election-symbols';
 
 
   // =========================================================================
-  // Size Slider Event Listener (Snaps strictly to Standard Sizes)
+  // Standard Size Focus Points (32, 64, 128, 256, 512) & Dynamic Card Scaling
   // =========================================================================
-  sizeSlider.addEventListener('input', (e) => {
-    const idx = parseInt(e.target.value, 10);
-    currentSize = STANDARD_SIZES[idx] !== undefined ? STANDARD_SIZES[idx] : 128;
-    sizeValue.textContent = `${currentSize}px`;
-    renderGrid();
+  function applyStandardSize(size, persist = true) {
+    const targetSize = parseInt(size, 10);
+    const configIndex = STANDARD_SIZES.findIndex(c => c.size === targetSize);
+    const activeIndex = configIndex >= 0 ? configIndex : 1;
+    const config = STANDARD_SIZES[activeIndex];
+    currentStandardSize = config.size;
+
+    if (iconsGrid) {
+      iconsGrid.setAttribute('data-size', currentStandardSize);
+      iconsGrid.style.setProperty('--card-size', config.cardSize);
+      iconsGrid.style.setProperty('--circle-dim', config.circleDim);
+      iconsGrid.style.setProperty('--svg-dim', config.svgDim);
+      iconsGrid.style.setProperty('--slug-font-size', config.slugFontSize);
+      iconsGrid.style.setProperty('--grid-gap', config.gap);
+      iconsGrid.style.setProperty('--card-padding', config.cardPadding);
+    }
+
+    if (sizeSlider) {
+      sizeSlider.value = activeIndex;
+    }
+
+    if (sizeValue) {
+      sizeValue.textContent = `${currentStandardSize}px`;
+    }
+
+    sizePillBtns.forEach(btn => {
+      const btnSize = parseInt(btn.dataset.size, 10);
+      btn.classList.toggle('active', btnSize === currentStandardSize);
+    });
+
+    focusDots.forEach(dot => {
+      const dotStep = parseInt(dot.dataset.step, 10);
+      dot.classList.toggle('active', dotStep === activeIndex);
+    });
+
+    if (sizeResetBtn) {
+      const isDefault = currentStandardSize === DEFAULT_SIZE;
+      sizeResetBtn.title = isDefault
+        ? 'Default standard size (64px)'
+        : `Current: ${currentStandardSize}px — Click to reset to default (64px)`;
+      sizeResetBtn.classList.toggle('is-custom', !isDefault);
+    }
+
+    if (persist) {
+      try {
+        localStorage.setItem('lk_icons_standard_size', currentStandardSize);
+      } catch (_) {}
+    }
+  }
+
+  // Initial apply of standard size
+  applyStandardSize(currentStandardSize, false);
+
+  if (sizeSlider) {
+    sizeSlider.addEventListener('input', (e) => {
+      const idx = parseInt(e.target.value, 10);
+      const chosen = STANDARD_SIZES[idx] ? STANDARD_SIZES[idx].size : DEFAULT_SIZE;
+      applyStandardSize(chosen, true);
+    });
+  }
+
+  sizePillBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const size = parseInt(btn.dataset.size, 10);
+      applyStandardSize(size, true);
+    });
   });
+
+  if (sizeResetBtn) {
+    sizeResetBtn.addEventListener('click', () => {
+      applyStandardSize(DEFAULT_SIZE, true);
+    });
+  }
 
   // =========================================================================
   // Search Input Event Listener
