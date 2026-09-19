@@ -237,31 +237,28 @@
                 </svg>
                 <span class="toolbar-label">Size:</span>
 
-                <!-- Quick Focus Point Buttons (32, 64, 128, 256, 512) -->
+                <!-- Quick Focus Point Buttons (32, 64, 128, 256) -->
                 <div class="size-focus-pills" role="group" aria-label="Standard icon sizes">
                   <button type="button" class="size-pill-btn" data-size="32" title="32px — Compact view">32</button>
                   <button type="button" class="size-pill-btn active" data-size="64" title="64px — Standard view">64</button>
                   <button type="button" class="size-pill-btn" data-size="128" title="128px — Medium preview">128</button>
                   <button type="button" class="size-pill-btn" data-size="256" title="256px — Large inspection">256</button>
-                  <button type="button" class="size-pill-btn" data-size="512" title="512px — Master resolution">512</button>
                 </div>
 
                 <!-- Focus Points Range Slider -->
-                <div class="size-slider-track-wrap" title="Slide through standard sizes (32, 64, 128, 256, 512)">
-                  <input type="range" id="sizeSlider" class="size-slider" min="0" max="4" step="1" value="1" list="sizeFocusTicks" aria-label="Standard size focus points slider">
+                <div class="size-slider-track-wrap" title="Slide through standard sizes (32, 64, 128, 256)">
+                  <input type="range" id="sizeSlider" class="size-slider" min="0" max="3" step="1" value="1" list="sizeFocusTicks" aria-label="Standard size focus points slider">
                   <datalist id="sizeFocusTicks">
                     <option value="0" label="32"></option>
                     <option value="1" label="64"></option>
                     <option value="2" label="128"></option>
                     <option value="3" label="256"></option>
-                    <option value="4" label="512"></option>
                   </datalist>
                   <div class="size-track-focus-dots" aria-hidden="true">
                     <span class="focus-dot" data-step="0"></span>
                     <span class="focus-dot active" data-step="1"></span>
                     <span class="focus-dot" data-step="2"></span>
                     <span class="focus-dot" data-step="3"></span>
-                    <span class="focus-dot" data-step="4"></span>
                   </div>
                 </div>
 
