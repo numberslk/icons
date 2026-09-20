@@ -52,7 +52,7 @@ metadata.forEach((item) => {
   // React Component (compatible with React 16, 17, 18, 19, Preact, and standard JSX/hyperscript)
   // We produce clean, robust React.createElement code that works WITHOUT requiring an external JSX transpiler runtime
   const reactCompCode = `
-export const ${compName} = /* @__PURE__ */ createIcon('${item.id}', '${item.name}', \`${innerSvg.replace(/`/g, '\\`')}\`);
+export const ${compName} = /* @__PURE__ */ createIcon('${item.id}', '${item.name}');
 `;
   reactComponents.push(reactCompCode);
   cjsExports.push(`${compName}`);
@@ -60,7 +60,7 @@ export const ${compName} = /* @__PURE__ */ createIcon('${item.id}', '${item.name
 
   reactDeclarations.push(`export declare const ${compName}: React.ForwardRefExoticComponent<ElectionSymbolIconProps & React.RefAttributes<SVGSVGElement>>;`);
 
-  svgExports.push(`export const ${svgConstName} = \`${rawSvg.replace(/`/g, '\\`')}\`;`);
+  svgExports.push(`export const ${svgConstName} = /* @__PURE__ */ getSymbolSvg('${item.id}');`);
   cjsExports.push(`${svgConstName}`);
   svgDeclarations.push(`export declare const ${svgConstName}: string;`);
 });
@@ -90,6 +90,7 @@ function createIcon(id, name, innerSvg) {
       ...restProps
     } = props || {};
 
+    const inner = innerSvg || (typeof rawSvgMap !== 'undefined' && rawSvgMap[id]) || '';
     const svgProps = {
       xmlns: 'http://www.w3.org/2000/svg',
       viewBox: '0 0 512 512',
@@ -100,7 +101,7 @@ function createIcon(id, name, innerSvg) {
       style: { display: 'inline-block', verticalAlign: 'middle', flexShrink: 0, ...style },
       'aria-hidden': !title ? 'true' : undefined,
       role: title ? 'img' : 'presentation',
-      dangerouslySetInnerHTML: { __html: innerSvg },
+      dangerouslySetInnerHTML: { __html: inner },
       ...restProps
     };
 
@@ -119,6 +120,7 @@ function createIcon(id, name, innerSvg) {
         ...restProps
       } = props || {};
 
+      const inner = innerSvg || (typeof rawSvgMap !== 'undefined' && rawSvgMap[id]) || '';
       return _React.createElement('svg', {
         ref,
         xmlns: 'http://www.w3.org/2000/svg',
@@ -130,7 +132,7 @@ function createIcon(id, name, innerSvg) {
         style: { display: 'inline-block', verticalAlign: 'middle', flexShrink: 0, ...style },
         'aria-hidden': !title ? 'true' : undefined,
         role: title ? 'img' : 'presentation',
-        dangerouslySetInnerHTML: { __html: innerSvg },
+        dangerouslySetInnerHTML: { __html: inner },
         ...restProps
       });
     });
@@ -378,7 +380,7 @@ export const ElectionSymbol = function (props) {
 `;
 
 fs.writeFileSync(path.join(distDir, 'index.mjs'), esmContent, 'utf-8');
-fs.writeFileSync(path.join(distElectionSymbolsDir, 'index.mjs'), esmContent, 'utf-8');
+fs.writeFileSync(path.join(distElectionSymbolsDir, 'index.mjs'), "export * from '../index.mjs';\n", 'utf-8');
 
 // CJS index.js
 const cjsContent = `
@@ -411,6 +413,7 @@ function createIcon(id, name, innerSvg) {
       ...restProps
     } = props || {};
 
+    const inner = innerSvg || (typeof rawSvgMap !== 'undefined' && rawSvgMap[id]) || '';
     const svgProps = {
       xmlns: 'http://www.w3.org/2000/svg',
       viewBox: '0 0 512 512',
@@ -421,7 +424,7 @@ function createIcon(id, name, innerSvg) {
       style: { display: 'inline-block', verticalAlign: 'middle', flexShrink: 0, ...style },
       'aria-hidden': !title ? 'true' : undefined,
       role: title ? 'img' : 'presentation',
-      dangerouslySetInnerHTML: { __html: innerSvg },
+      dangerouslySetInnerHTML: { __html: inner },
       ...restProps
     };
 
@@ -439,6 +442,7 @@ function createIcon(id, name, innerSvg) {
         ...restProps
       } = props || {};
 
+      const inner = innerSvg || (typeof rawSvgMap !== 'undefined' && rawSvgMap[id]) || '';
       return React.createElement('svg', {
         ref,
         xmlns: 'http://www.w3.org/2000/svg',
@@ -450,7 +454,7 @@ function createIcon(id, name, innerSvg) {
         style: { display: 'inline-block', verticalAlign: 'middle', flexShrink: 0, ...style },
         'aria-hidden': !title ? 'true' : undefined,
         role: title ? 'img' : 'presentation',
-        dangerouslySetInnerHTML: { __html: innerSvg },
+        dangerouslySetInnerHTML: { __html: inner },
         ...restProps
       });
     });
@@ -597,17 +601,12 @@ function getElectionTag(symbolId, options = {}) {
 exports.getElectionTag = getElectionTag;
 
 ${metadata.map(item => {
-  const svgFile = path.join(svgDir, `${item.id}.svg`);
-  const rawSvg = fs.existsSync(svgFile) ? fs.readFileSync(svgFile, 'utf-8') : '';
-  const innerMatch = rawSvg.match(/<svg[^>]*>([\s\S]*?)<\/svg>/);
-  let innerSvg = innerMatch ? innerMatch[1].trim() : '';
-  innerSvg = innerSvg.replace(/<style>[\s\S]*?<\/style>/g, '').trim();
   const compName = item.componentName;
   const camelId = item.id.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
   const svgConstName = `${camelId}Svg`;
   return `
-exports.${svgConstName} = \`${rawSvg.replace(/`/g, '\\`')}\`;
-exports.${compName} = createIcon('${item.id}', '${item.name}', \`${innerSvg.replace(/`/g, '\\`')}\`);
+exports.${svgConstName} = getSymbolSvg('${item.id}');
+exports.${compName} = createIcon('${item.id}', '${item.name}');
 `;
 }).join('')}
 
@@ -699,7 +698,7 @@ if (typeof window !== 'undefined') {
 `;
 
 fs.writeFileSync(path.join(distDir, 'index.js'), cjsContent, 'utf-8');
-fs.writeFileSync(path.join(distElectionSymbolsDir, 'index.js'), cjsContent, 'utf-8');
+fs.writeFileSync(path.join(distElectionSymbolsDir, 'index.js'), "module.exports = require('../index.js');\n", 'utf-8');
 
 // TypeScript Definitions dist/index.d.ts
 const dtsContent = `
@@ -764,6 +763,6 @@ ${reactDeclarations.join('\n')}
 `;
 
 fs.writeFileSync(path.join(distDir, 'index.d.ts'), dtsContent, 'utf-8');
-fs.writeFileSync(path.join(distElectionSymbolsDir, 'index.d.ts'), dtsContent, 'utf-8');
+fs.writeFileSync(path.join(distElectionSymbolsDir, 'index.d.ts'), "export * from '../index';\n", 'utf-8');
 
 console.log('Build complete! Generated dist/index.*, dist/election-symbols/index.*, and dist/svg/*.svg');

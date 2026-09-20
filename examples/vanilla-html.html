@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Lanka Election Symbols - Vanilla Web Components Demo</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .card {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .tag-container {
+      background: #f1f5f9;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Sri Lanka Election Symbols — Web Components Demo</h1>
+  <p>Use custom HTML elements anywhere with zero frameworks!</p>
+
+  <h2>1. Standard Web Component Tags:</h2>
+  <div class="grid">
+    <div class="card">
+      <!-- Direct ID lookup with color and size -->
+      <lk-election-symbol name="elephant" size="48" color="#0284c7"></lk-election-symbol>
+      <h3>Elephant</h3>
+      <p><code>&lt;lk-election-symbol name="elephant"&gt;</code></p>
+    </div>
+
+    <div class="card">
+      <lk-election-symbol name="telephone" size="48" color="#16a34a"></lk-election-symbol>
+      <h3>Telephone</h3>
+      <p><code>&lt;lk-election-symbol name="telephone"&gt;</code></p>
+    </div>
+
+    <div class="card">
+      <lk-election-symbol name="compass" size="48" color="#dc2626"></lk-election-symbol>
+      <h3>Compass</h3>
+      <p><code>&lt;lk-election-symbol name="compass"&gt;</code></p>
+    </div>
+
+    <div class="card">
+      <lk-election-symbol name="flower-bud" size="48" color="#9333ea"></lk-election-symbol>
+      <h3>Flower Bud</h3>
+      <p><code>&lt;lk-election-symbol name="flower-bud"&gt;</code></p>
+    </div>
+  </div>
+
+  <h2>2. Gazette Election Context Syntax Tags:</h2>
+  <div class="tag-container">
+    <p>Civic and media applications can also use direct context tags:</p>
+    <div style="display: flex; gap: 24px; align-items: center; margin-top: 12px;">
+      <lk-election-symbols-2025-pres-national-NPP size="48" color="#dc2626"></lk-election-symbols-2025-pres-national-NPP>
+      <code>&lt;lk-election-symbols-2025-pres-national-NPP&gt;</code>
+    </div>
+    <div style="display: flex; gap: 24px; align-items: center; margin-top: 12px;">
+      <lk-election-symbols-2024-pres-national-SJB size="48" color="#16a34a"></lk-election-symbols-2024-pres-national-SJB>
+      <code>&lt;lk-election-symbols-2024-pres-national-SJB&gt;</code>
+    </div>
+  </div>
+
+  <!-- Load the package bundle (locally or via unpkg / jsdelivr in production) -->
+  <script type="module">
+    // In production via CDN:
+    // import 'https://cdn.jsdelivr.net/npm/@numberslk/icons/dist/index.mjs';
+
+    // Locally from build:
+    import '../dist/index.mjs';
+  </script>
+</body>
+</html>
