@@ -96,3 +96,10 @@ import compass1024PngUrl from '@numberslk/icons/png-1024/compass.png';
 // Full raw JSON metadata
 import metadata from '@numberslk/icons/metadata';
 ```
+
+---
+
+## ⚠️ Legal Disclaimer
+
+This is an independent, community open-source project by [numbers.lk](https://numbers.lk) and is **not** affiliated with or endorsed by the Election Commission of Sri Lanka (ECSL). Provided strictly "AS IS" for software UI, journalism, and research. Please see [TERMS.md](../TERMS.md) for full terms and limitation of liability.
+

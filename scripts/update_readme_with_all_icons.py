@@ -108,20 +108,24 @@ table_b = make_detailed_table(sch_b)
 
 template = """# 🏛️ numbers.lk Icons (`@numberslk/icons`)
 
-> **The official open-source civic and organizational vector icon library for Sri Lanka by [numbers.lk](https://numbers.lk)**. Featuring 182 official Sri Lanka election symbols sourced directly from Government Gazettes, with subpath export support (`@numberslk/icons/election-symbols`) and expanding collections for Sri Lankan banks and public institutions.
+> **An open-source civic and organizational vector icon library for Sri Lanka by [numbers.lk](https://numbers.lk)**. Featuring 182 Sri Lanka election symbols based on public Government Gazette publications, with subpath export support (`@numberslk/icons/election-symbols`) and expanding collections for Sri Lankan banks and public institutions.
+
+> ⚠️ **LEGAL DISCLAIMER: INDEPENDENT COMMUNITY PROJECT — NOT AN OFFICIAL GOVERNMENT PROJECT**  
+> This is an **independent, community open-source project** created and maintained by [numbers.lk](https://numbers.lk). It is **NOT** an official project, publication, or service of the **Election Commission of Sri Lanka (ECSL)**, the Department of Elections, or the Government of Sri Lanka. It is **NOT** affiliated with, authorized, certified, or endorsed by any government entity, statutory body, or political party.  
+> All icons, graphics, and metadata are provided strictly **"AS IS"** for informational, journalistic, educational, and civic-tech software development purposes. **numbers.lk, its founders, authors, and contributors expressly disclaim all warranties and accept NO legal responsibility or liability** for any electoral disputes, ballot reproduction inaccuracies, or claims arising from the use of this library. Please review our full **[Terms of Use & Legal Disclaimer](TERMS.md)**.
 
 [![NPM Version](https://img.shields.io/npm/v/@numberslk/icons?color=amber&style=flat-square)](https://www.npmjs.com/package/@numberslk/icons)
 [![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue?style=flat-square)](LICENSE)
 [![Symbols Count](https://img.shields.io/badge/Election%20Symbols-182%20Ultra--Smooth%20Vectors-sky?style=flat-square)](https://github.com/numberslk/icons)
 [![High Resolution](https://img.shields.io/badge/Resolution-512px%20%26%201024px-violet?style=flat-square)](https://github.com/numberslk/icons)
-[![Gazette Verified](https://img.shields.io/badge/Gazette-Election%20Commission%20LK-rose?style=flat-square)](https://elections.gov.lk)
+[![Terms & Disclaimer](https://img.shields.io/badge/Terms%20%26%20Disclaimer-TERMS.md-red?style=flat-square)](TERMS.md)
 [![Interactive Showcase](https://img.shields.io/badge/Live%20Showcase-Local%20%3A3456-indigo?style=flat-square)](http://localhost:3456)
 
 ---
 
 ## ⭐ Prominent Political Party Symbols
 
-A quick reference for the most widely recognized party election symbols in Sri Lanka:
+A quick reference for widely recognized party election symbols in Sri Lanka:
 
 __FEATURED_GRID__
 
@@ -129,7 +133,7 @@ __FEATURED_GRID__
 
 ## 🖼️ Complete Visual Icon Gallery (All 182 Symbols)
 
-Every symbol below is an authentic vector plate normalized to a standard **`512×512 viewBox`** with smooth cubic bezier splines, **`fill="currentColor"`**, and responsive Light/Dark mode styling. Click any icon to view its raw 512px SVG or download its 512px PNG.
+Every symbol below is vectorized and normalized to a standard **`512×512 viewBox`** with smooth cubic bezier splines, **`fill="currentColor"`**, and responsive Light/Dark mode styling. Click any icon to view its raw 512px SVG or download its 512px PNG.
 
 __ALL_GRID__
 
@@ -137,7 +141,7 @@ __ALL_GRID__
 
 ## ✨ Key Features
 
-- 🏛️ **100% Gazette Verified Proportions**: Sourced directly from official Democratic Socialist Republic of Sri Lanka Gazette Extraordinaries (`No. 2315/06`, `No. 2263/24`, `No. 2165/45 & 2166/16`) with true un-distorted printed aspect ratios.
+- 🏛️ **100% Gazette-Matched Proportions**: Vectorized directly from public Democratic Socialist Republic of Sri Lanka Gazette Extraordinaries (`No. 2315/06`, `No. 2263/24`, `No. 2165/45 & 2166/16`) with true un-distorted printed aspect ratios.
 - 📦 **Modern Subpath Exports**: Modular import structure allowing `import { ... } from '@numberslk/icons/election-symbols'` as well as root `@numberslk/icons`, with built-in architectural support for upcoming sets (`@numberslk/icons/banks`).
 - 💎 **High-Resolution & Silky Smooth**: Standardized **`512×512 viewBox`** with sub-pixel Gaussian level-set curve smoothing. Free of jagged edges, pixelation, and staircase cuts.
 - ⭕ **Optical Keyline & Circular Mask Safe**: Calibrated optical sizing and centering with guaranteed &ge; 42px safe breathing clearance inside a circular boundary ($R=256$). Icons fit cleanly into circular avatars, round badges, and buttons without clipping.
@@ -146,7 +150,7 @@ __ALL_GRID__
 - 🌓 **Automatic Dark / Light Mode**: Standalone SVGs include responsive media queries so they look crisp on both light and dark GitHub or markdown themes.
 - ⚛️ **Multi-Framework**: Out-of-the-box components for **React**, **Next.js**, **Vue 3**, **Vanilla JS**, and **Raw SVG**.
 - 🌐 **Multilingual Search**: Trilingual dictionary with English, Sinhala (සිංහල), and Tamil (தமிழ்) names.
-- 📋 **Political Party Registry**: Pre-linked with official Sri Lankan political parties (UNP, SJB, NPP, SLPP, SLFP, ITAK, ACMC, EPDP, CWC, etc.).
+- 📋 **Political Party Registry**: Linked with recognized Sri Lankan political parties (UNP, SJB, NPP, SLPP, SLFP, ITAK, ACMC, EPDP, CWC, etc.).
 - 📜 **BSD-3-Clause Permissive Licensing**: Free for commercial, personal, and civic use with simple attribution.
 
 ---
@@ -279,7 +283,7 @@ const elephant = searchSymbols('யானை');
 
 ## 🏛️ Schedule A: Recognized Political Parties (78 Symbols)
 
-Symbols officially allotted to recognized political parties in Sri Lanka under the *Parliamentary Elections Act, No. 1 of 1981* and *Local Authorities Elections Ordinance*:
+Symbols designated for recognized political parties in Sri Lanka under the *Parliamentary Elections Act, No. 1 of 1981* and *Local Authorities Elections Ordinance*:
 
 <details open>
 <summary><b>Click to expand / collapse Schedule A Table (78 symbols)</b></summary>
@@ -303,13 +307,25 @@ __TABLE_B__
 
 ---
 
-## 📜 Official Gazette Legal Citations
+## 📜 Public Gazette Records & Sources
 
-All election symbols in this library are authentic civic insignia sourced directly from:
+Election symbols in this library are derived from public gazette records published by the Government of Sri Lanka:
 - **Gazette Extraordinary No. 2315/06** (16 January 2023) — *Local Authorities Elections Ordinance (Chapter 262) / Parliamentary Elections Act*: Schedules (A) and (B).
 - **Gazette Extraordinary No. 2263/24** (21 January 2022) — *Parliamentary Elections Act, No. 1 of 1981*: Schedule (A) and Schedule (B).
 - **Gazette Extraordinary No. 2165/45 & 2166/16** (March 2020) — Approved Parliamentary Election Symbols.
-- **Recognized Political Parties Register (2024)** — Election Commission of Sri Lanka.
+- **Recognized Political Parties Register** — Public notices of the Election Commission of Sri Lanka.
+
+---
+
+## ⚠️ Terms of Use, Legal Disclaimer & Limitation of Liability
+
+Please review the complete, legally binding **[Terms of Use & Legal Disclaimer (TERMS.md)](TERMS.md)** before accessing, installing, or deploying this library.
+
+1. **Independent Project / Not Official**: This is an **unofficial, community open-source project by numbers.lk**. It is **not** affiliated with, authorized, certified, maintained, or endorsed by the **Election Commission of Sri Lanka (ECSL)**, the Department of Elections, or the Government of Sri Lanka.
+2. **Strictly for UI, Journalism, and Research**: Symbols and metadata are provided solely for user interfaces, data visualization, journalistic reporting, education, and civic-tech software. They must **never** be used as official ballot printing artwork or authoritative legal determination materials.
+3. **Disclaimer of Warranties ("AS IS")**: All software, vectors, and metadata are provided on an **"AS IS"** basis without warranties of any kind (express, implied, or statutory), including merchantability, fitness for a particular purpose, or accuracy.
+4. **Total Limitation of Liability**: In no event shall numbers.lk, its founders, authors, contributors, or copyright holders be liable for any direct, indirect, incidental, special, exemplary, punitive, or consequential damages, or any electoral, political, legal, or commercial claims resulting from the use or distribution of these assets.
+5. **No Endorsement**: Inclusion of any political party emblem or candidate symbol does not imply endorsement by numbers.lk of any party or candidate, nor does it imply endorsement of numbers.lk by any entity.
 
 ---
 
@@ -318,7 +334,7 @@ All election symbols in this library are authentic civic insignia sourced direct
 This project is licensed under the **[BSD 3-Clause License](LICENSE)**.
 
 ### Permitted Uses
-- ✅ **Free for Personal, Civic, and Commercial Use**: You can freely use, modify, embed, and distribute these icons in web apps, mobile apps, print publications, dashboards, and research.
+- ✅ **Free for Personal, Civic, and Commercial Software**: You can freely use, modify, embed, and distribute these icons in web apps, mobile apps, print publications, dashboards, and research.
 - ✅ **Modification Allowed**: You may adapt, resize, recolor, and vectorize the assets.
 
 ### Attribution Requirement
@@ -328,6 +344,7 @@ Under the BSD 3-Clause License, redistribution in source or binary/visual form m
 <!-- Attribution snippet for credits or footer: -->
 Icons provided by [numbers.lk](https://numbers.lk) (@numberslk/icons) under BSD-3-Clause License.
 ```
+
 """
 
 readme_content = template.replace("__FEATURED_GRID__", grid_featured)

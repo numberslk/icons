@@ -2744,3 +2744,55 @@ pre[class*="language-"] {
   padding-top: 0.75rem;
 }
 
+/* --------------------------------------------------------------------------
+   Legal Disclaimer Banner & Footer
+   -------------------------------------------------------------------------- */
+.legal-disclaimer-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(183, 42, 31, 0.06);
+  border: 1px solid rgba(183, 42, 31, 0.2);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--foreground);
+}
+
+.legal-disclaimer-banner svg {
+  color: var(--brand);
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.legal-disclaimer-banner a {
+  color: var(--brand);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.legal-disclaimer-banner a:hover {
+  text-decoration: none;
+}
+
+.footer-disclaimer-text {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  line-height: 1.5;
+  max-width: 620px;
+  text-align: right;
+}
+
+.footer-disclaimer-text a {
+  color: var(--brand);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer-disclaimer-text {
+    text-align: left;
+  }
+}
+

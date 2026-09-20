@@ -1,7 +1,7 @@
 {
   "name": "@numberslk/icons",
   "version": "1.0.0",
-  "description": "The official open-source icon suite by numbers.lk — featuring 180+ official Sri Lanka election symbols, with upcoming collections for Sri Lankan banks and public institutions.",
+  "description": "An open-source civic vector icon library by numbers.lk featuring 180+ Sri Lanka election symbols based on public gazette records. Independent and unofficial community project.",
   "publishConfig": {
     "access": "public"
   },
@@ -36,7 +36,9 @@
     "src/metadata.json",
     "src/icons",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "TERMS.md",
+    "DISCLAIMER.md"
   ],
   "scripts": {
     "prepublishOnly": "npm run build && npm test",

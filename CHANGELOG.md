@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2026-09-20
 
 ### Added
-- **182 Official Sri Lanka Election Symbols**: Authentic civic insignia sourced directly from Gazette Extraordinary No. 2315/06 and 2263/24 Schedule (A) and Schedule (B).
+- **182 Sri Lanka Election Symbols**: Vectorized civic insignia derived from public Gazette Extraordinaries No. 2315/06 and 2263/24 Schedule (A) and Schedule (B). Independent, unofficial open-source project by numbers.lk.
+- **Terms of Use & Legal Disclaimer**: Established comprehensive [TERMS.md](TERMS.md) and [DISCLAIMER.md](DISCLAIMER.md) detailing non-affiliation with the Election Commission of Sri Lanka, "as-is" warranty disclaimer, and limitation of liability.
 - **Dual Module Exports**: First-class support for modern ESM (`import`) and CommonJS (`require`).
 - **Tree-shakeable React Components**:
   - 182 individual icon components (`ElephantIcon`, `TelephoneIcon`, `CompassIcon`, `FlowerBudIcon`, etc.).
