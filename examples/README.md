@@ -79,23 +79,22 @@ Open [`vanilla-html.html`](vanilla-html.html) directly in your browser.
 
 ---
 
-## 4. Direct Asset Imports
+## 4. Direct Asset & Metadata Imports
 
-You can also import raw SVGs and PNGs directly using your bundler (Vite, Webpack, Next.js):
+You can import raw SVGs and JSON metadata directly using your bundler (Vite, Webpack, Next.js):
 
 ```javascript
-// Raw SVG file path
+// Raw SVG vector file path (packaged in npm library)
 import elephantSvgUrl from '@numberslk/icons/svg/elephant.svg';
 
-// High-resolution 512px raster PNG
-import telephonePngUrl from '@numberslk/icons/png/telephone.png';
+// Standalone SVG markup string
+import { elephantSvg, compassSvg } from '@numberslk/icons';
 
-// Ultra-high-resolution 1024px raster PNG
-import compass1024PngUrl from '@numberslk/icons/png-1024/compass.png';
-
-// Full raw JSON metadata
+// Full trilingual metadata (ID, Sinhala, Tamil, political parties)
 import metadata from '@numberslk/icons/metadata';
 ```
+
+*(High-resolution 512px and 1024px PNGs are available for download in the [GitHub repository](https://github.com/numberslk/icons)).*
 
 ---
 

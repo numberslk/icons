@@ -1,6 +1,6 @@
 {
   "name": "@numberslk/icons",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An open-source civic vector icon library by numbers.lk featuring 180+ Sri Lanka election symbols based on public gazette records.",
   "publishConfig": {
     "access": "public"
