@@ -8,6 +8,7 @@
 [![Symbols Count](https://img.shields.io/badge/Election%20Symbols-182%20Smooth%20Vectors-sky?style=flat-square)](https://github.com/numberslk/icons)
 [![Package Size](https://img.shields.io/badge/Package%20Size-2.7%20MB-emerald?style=flat-square)](https://www.npmjs.com/package/@numberslk/icons)
 [![Legal Disclaimer](https://img.shields.io/badge/Disclaimer-TERMS.md-orange?style=flat-square)](https://github.com/numberslk/icons/blob/main/TERMS.md)
+[![Live Showcase](https://img.shields.io/badge/Showcase-icons.numbers.lk-indigo?style=flat-square)](https://icons.numbers.lk)
 
 ```bash
 npm install @numberslk/icons
